@@ -64,6 +64,7 @@ body {
 }
 
 table {
+  table-layout: fixed;
   width: 100%;
   border-spacing: 0 2px;
 
@@ -152,6 +153,12 @@ table {
         }
         &:nth-child(3) {
           font-weight: 500;
+        }
+
+        p {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
         }
       }
     }

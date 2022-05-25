@@ -41,10 +41,10 @@ const ContactList = () => {
         <td>
           <SvgUser width='50' heigth='50' />
         </td>
-        <td>{name}</td>
-        <td>{number}</td>
-        <td>{address}</td>
-        <td>{email}</td>
+        <td><p>{name}</p></td>
+        <td><p>{number}</p></td>
+        <td><p>{address}</p></td>
+        <td><p>{email}</p></td>
         <td>
           <button className='change-btn' onClick={() => openModalEdit({ id })}>
             Редактировать
