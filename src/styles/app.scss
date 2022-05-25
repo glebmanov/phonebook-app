@@ -1,0 +1,159 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-weight: 300;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  background: rgb(224, 231, 241);
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 1200px;
+}
+
+.search-wrapper {
+  padding: 15px 0px 15px 25px;
+  background-color: rgb(38, 57, 104);
+
+  input {
+    height: 33px;
+    width: 450px;
+    border: none;
+    border-radius: 5px;
+    padding-left: 30px;
+    color: white;
+    background-color: rgb(67, 81, 121);
+
+    &:focus {
+      outline-style: none;
+    }
+    &::-webkit-input-placeholder {
+      color: rgb(254, 254, 254);
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 7px;
+
+  svg {
+    width: 25px;
+    height: 25px;
+    transform: rotate(45deg);
+    cursor: pointer;
+  }
+
+  svg:hover {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+table {
+  width: 100%;
+  border-spacing: 0 2px;
+
+  thead {
+    position: sticky;
+    top: 0;
+    height: 48px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .4);
+    background-color: rgb(254, 254, 254);
+    z-index: 600;
+
+    td {
+      padding-left: 10px;
+
+      &:hover {
+        color: rgb(38, 57, 104);
+        cursor: pointer;
+      }
+      &:first-child {
+        padding-left: 45px;
+        width: 100px;
+      }
+      &:nth-child(2) {
+        width: 200px;
+      }
+      &:nth-child(3) {
+        font-weight: 500;
+        width: 160px;
+      }
+      &:nth-child(4) {
+        width: 300px;
+      }
+      &:nth-child(5) {
+        width: 270px;
+      }
+    }
+  }
+
+  tbody {
+    background: rgb(224, 231, 241);
+
+    .change-btn {
+      display: none;
+      width: 135px;
+      height: 35px;
+      border-radius: 7px;
+      border-style: none;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      color: #435179;
+      background: rgb(254, 254, 254);
+    }
+
+    tr {
+      position: relative;
+      height: 70px;
+      background: rgb(254, 254, 254);
+
+      &:hover {
+        background: rgb(224, 231, 241) !important;
+
+        .change-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          top: 17px;
+          right: 50px;
+        }
+      }
+
+      &:nth-child(odd) {
+        background-color: rgb(250, 250, 250);
+      }
+
+      td {
+        padding-left: 10px;
+
+        &:first-child {
+          border-left: 25px solid rgb(224, 231, 241);
+          padding-left: 15px;
+        }
+        &:last-child {
+          border-right: 25px solid rgb(224, 231, 241);
+        }
+        &:nth-child(3) {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
