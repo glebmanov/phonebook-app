@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import _ from 'lodash';
 
 const contactListSlice = createSlice({
   name: 'contacts',
@@ -13,10 +12,12 @@ const contactListSlice = createSlice({
       edit: { isActive: false, id: null },
       import: { isActive: false },
     },
+    nextUniqueId: 1,
   },
   reducers: {
     addContact(state, action) {
-      state.contacts.push({ id: _.uniqueId(), ...action.payload });
+      state.contacts.push({ id: state.nextUniqueId, ...action.payload });
+      state.nextUniqueId += 1;
     },
     editContact(state, action) {
       Object.assign(
@@ -54,7 +55,10 @@ const contactListSlice = createSlice({
       }
     },
     importFile(state, action) {
-      action.payload.map(newContact => state.contacts.push({ id: _.uniqueId(), ...newContact }));
+      action.payload.forEach(newContact => {
+        state.contacts.push({ id: state.nextUniqueId, ...newContact });
+        state.nextUniqueId += 1;
+      });
     },
   },
 });
