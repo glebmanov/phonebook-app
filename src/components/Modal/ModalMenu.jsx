@@ -14,7 +14,7 @@ const ModalMenu = () => {
   const closeModalAdd = () => dispatch(toggleModalMenu({ isActive: false }));
 
   const handleExport = () => {
-    const file = new Blob([JSON.stringify(contacts, null, 2)], {
+    const file = new Blob([JSON.stringify({contacts: contacts}, null, 2)], {
       type: 'application/json;charset=' + document.characterSet,
     });
     saveAs(file, 'contacts.json');
