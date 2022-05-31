@@ -11,17 +11,18 @@ const ModalMenu = () => {
   const contacts = useSelector(state => state.contactList.contacts);
   const isActive = useSelector(state => state.contactList.modals.menu.isActive);
 
-  const closeModalAdd = () => dispatch(toggleModalMenu({ isActive: false }));
-
   const handleExport = () => {
-    const file = new Blob([JSON.stringify({contacts: contacts}, null, 2)], {
+    const file = new Blob([JSON.stringify({ contacts: contacts }, null, 2)], {
       type: 'application/json;charset=' + document.characterSet,
     });
     saveAs(file, 'contacts.json');
   };
 
   return (
-    <div className={isActive ? 'modal-menu active' : 'modal-menu'} onClick={() => closeModalAdd()}>
+    <div
+      className={isActive ? 'modal-menu active' : 'modal-menu'}
+      onClick={() => dispatch(toggleModalMenu({ isActive: false }))}
+    >
       <div className='modal-menu-content' onClick={e => e.stopPropagation()}>
         <MenuItem
           name={'add'}

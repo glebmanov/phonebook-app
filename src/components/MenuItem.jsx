@@ -5,7 +5,7 @@ import { ReactComponent as SvgImport } from '../icons/import.svg';
 import { ReactComponent as SvgExport } from '../icons/export.svg';
 import { ReactComponent as SvgEdit } from '../icons/edit.svg';
 
-const MenuItem = ({ name, onClick, text, active }) => {
+const MenuItem = ({ name, onClick, text }) => {
   const getItem = value => {
     switch (value) {
       case 'add':
@@ -22,7 +22,7 @@ const MenuItem = ({ name, onClick, text, active }) => {
   };
 
   return (
-    <div className='menu-item' onClick={() => onClick(!active)}>
+    <div className='menu-item' onClick={() => onClick()}>
       <div className='inner-item'>
         {getItem(name)}
         <span>{text}</span>

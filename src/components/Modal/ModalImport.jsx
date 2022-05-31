@@ -20,16 +20,19 @@ const ModalImport = () => {
       e.target.value = '';
       dispatch(toggleModalImport({ isActive: false }));
       setCorrectFormat(true);
+    } else {
+      e.target.value = '';
+      setCorrectFormat(false);
     }
-    e.target.value = '';
-    setCorrectFormat(false);
+  };
+
+  const closeModal = () => {
+    dispatch(toggleModalImport({ isActive: false }));
+    setCorrectFormat(true);
   };
 
   return (
-    <div
-      className={isActive ? 'modal-import active' : 'modal-import'}
-      onClick={() => dispatch(toggleModalImport({ isActive: false }))}
-    >
+    <div className={isActive ? 'modal-import active' : 'modal-import'} onClick={() => closeModal()}>
       <div className='modal-import-content' onClick={e => e.stopPropagation()}>
         {!correctFormat && <span className='warning'>Импорт только json файла</span>}
         <input id='import' type='file' onChange={e => handleChange(e)} />
