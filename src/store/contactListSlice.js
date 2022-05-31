@@ -56,7 +56,7 @@ const contactListSlice = createSlice({
     },
     importFile(state, action) {
       action.payload.forEach(newContact => {
-        state.contacts.push({ id: state.nextUniqueId, ...newContact });
+        state.contacts.push({ ...newContact, id: state.nextUniqueId });
         state.nextUniqueId += 1;
       });
     },
