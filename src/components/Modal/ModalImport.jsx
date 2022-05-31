@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { importFile, toggleModalImport } from '../../store/contactListSlice';
 
-import '../../styles/modal-import.scss';
+import '../../styles/modal-add-edit-import.scss';
 
 const ModalImport = () => {
   const dispatch = useDispatch();

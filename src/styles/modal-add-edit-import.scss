@@ -1,4 +1,4 @@
-.modal-edit {
+.modal-add, .modal-edit, .modal-import {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -15,12 +15,15 @@
   }
 }
 
-.modal-edit-content {
+.modal-add-content, .modal-edit-content, .modal-import-content {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
   width: 440px;
-  padding: 40px;
+  height: auto;
+  padding: 17px 40px;
   background: white;
   border-radius: 10px;
 
@@ -41,7 +44,6 @@
 
   input {
     text-align: center;
-    margin-bottom: 15px;
     width: 250px;
     height: 25px;
     border: 1px solid rgb(38, 57, 104);
@@ -51,6 +53,7 @@
 
   .buttons {
     margin-top: 20px;
+    margin-bottom: 15px;
 
     input {
       width: 150px;
@@ -65,5 +68,14 @@
   .input {
     display: flex;
     justify-content: center;
+  }
+
+  .warning {
+    display: flex;
+    justify-content: center;
+  
+    height: 15px;
+    font-size: 10px;
+    color: red;
   }
 }
