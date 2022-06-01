@@ -18,6 +18,7 @@
 .modal-menu-content {
   display: flex;
   justify-content: center;
+  background: radial-gradient(circle, transparent 20%, rgb(254, 254, 254) 20%);
 
   position: relative;
   width: 440px;
@@ -27,27 +28,12 @@
   overflow: hidden;
 }
 
-.circle {
-  border-radius: 50%;
-  background: rgb(156, 161, 168);
-
-  position: absolute;
-  top: 160px;
-  left: 160px;
-  width: 120px;
-  height: 120px;
-  transform-origin: 100% 100%;
-  overflow: hidden;
-}
-
 .menu-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid rgb(254, 254, 254);
-
-  background: rgb(254, 254, 254);
+  background: transparent;
 
   position: absolute;
   top: 0px;
@@ -64,8 +50,7 @@
   }
 
   &:hover {
-    background: #263968;
-    border: 1px solid #263968;
+    background: radial-gradient(circle at bottom right, transparent 20%, #263968 20%);
 
     span {
       color: rgb(254, 254, 254);
@@ -77,7 +62,7 @@
   }
 
   &:nth-child(1) {
-    transform: rotate(45deg); 
+    transform: rotate(45deg);
 
     .inner-item {
       transform: rotate(-45deg);

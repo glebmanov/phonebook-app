@@ -53,7 +53,6 @@ const ModalMenu = () => {
             dispatch(toggleModalMenu({ isActive: false }));
           }}
         ></MenuItem>
-        <div className='circle'></div>
       </div>
     </div>
   );
