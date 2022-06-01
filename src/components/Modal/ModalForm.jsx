@@ -12,7 +12,7 @@ const ModalForm = ({ contact, handlerSubmit, toggleModal, togglePayload }) => {
     setValue,
   } = useForm();
 
-  if (contact && submitCount === 0) {
+  if (contact && submitCount <= 1) {
     setValue('name', contact?.name);
     setValue('number', contact?.number);
     setValue('email', contact?.email);
