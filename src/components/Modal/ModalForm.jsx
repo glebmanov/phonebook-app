@@ -6,13 +6,13 @@ const ModalForm = ({ contact, handlerSubmit, toggleModal, togglePayload }) => {
   const dispatch = useDispatch();
   const {
     register,
-    formState: { errors },
+    formState: { errors, submitCount },
     handleSubmit,
     reset,
     setValue,
   } = useForm();
 
-  if (contact) {
+  if (contact && submitCount === 0) {
     setValue('name', contact?.name);
     setValue('number', contact?.number);
     setValue('email', contact?.email);
